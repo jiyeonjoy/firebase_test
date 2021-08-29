@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_test/sub_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -222,12 +223,18 @@ class _PushMessagingExampleState extends State<PushMessagingExample> {
         ),
         // For testing -- simulate a message being received
         floatingActionButton: FloatingActionButton(
-          onPressed: () => _showItemDialog(<String, dynamic>{
-            'data': <String, String>{
-              'id': '2',
-              'status': 'out of stock',
-            },
-          }),
+          // onPressed: () => _showItemDialog(<String, dynamic>{
+          //   'data': <String, String>{
+          //     'id': '2',
+          //     'status': 'out of stock',
+          //   },
+          // }),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SubPage()),
+            );
+          },
           tooltip: 'Simulate Message',
           child: const Icon(Icons.message),
         ),
