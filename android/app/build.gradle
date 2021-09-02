@@ -69,4 +69,5 @@ dependencies {
         exclude group: 'com.google.firebase', module: 'firebase-iid'
     }
     implementation 'com.google.firebase:firebase-iid:21.1.0'
+    implementation 'com.google.firebase:firebase-config-ktx:21.0.1'
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_test/sub_page.dart';
+import 'package:firebase_test/util/firebase_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -162,6 +163,9 @@ class _PushMessagingExampleState extends State<PushMessagingExample> {
   void initState() {
     super.initState();
     initShared();
+
+    //FireBaseHelper().firebaseCloudMessagingListeners();
+
     _firebaseMessaging.configure(
         onMessage: (Map<String, dynamic> message) async {
           print('-------------------onMessage: $message');
